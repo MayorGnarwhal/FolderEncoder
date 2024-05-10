@@ -4,7 +4,7 @@ local FolderEncoder = {}
 local function GetAttributeName(key)
 	local attrStart, attrEnd = string.find(key, "attr_")
 	if attrStart == 1 then
-		return string.sub(key, attrEnd)
+		return string.sub(key, attrEnd + 1)
 	end
 end
 
