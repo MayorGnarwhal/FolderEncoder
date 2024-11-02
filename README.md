@@ -3,7 +3,7 @@ FolderEncoder is a robust and lightweight way to represent Roblox Folder instanc
 
 
 ## `FolderToTable()`
-Encode a Folder or ValueBase into a table. Encodes all descendants of `dataFile` as long as they are Folders or ValueBases. Attributes are prefixed with `attr_`.
+Encode a Folder or ValueBase into a table. Encodes all descendants of `dataFile` as long as they are Folders or ValueBases. Attributes are prefixed with `attr/`.
 ### Parameters
 |     |     |     |
 | :-- | :-- | :-- |
@@ -26,7 +26,7 @@ print(tbl)
 			BrickColorValue = {
 				CFrameValue = CFrame.new(),
 				__value = BrickColor.new("Medium stone grey"),
-				attr_ColorName = "Grey",
+				attr/ColorName = "Grey",
 			},
 			ObjectValue = <Instance>,
 		},
