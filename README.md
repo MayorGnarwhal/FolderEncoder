@@ -1,9 +1,17 @@
 # FolderEncoder
 FolderEncoder is a robust and lightweight way to represent Roblox Folder instances into lua tables and vice versa.
 
+Easily converts folders into tables and tables into folders. Supports attributes, subfolders, and non-folder instance types.
 
+
+* [Limitations](#limitations)
+* [Installation](#installation)
+
+
+# Methods
 ## `FolderToTable()`
 Encode a Folder or ValueBase into a table. Encodes all descendants of `dataFile` as long as they are Folders or ValueBases. Attributes are prefixed with `__attr/`.
+
 ### Parameters
 |     |     |     |
 | :-- | :-- | :-- |
@@ -67,6 +75,11 @@ print(valueBase) --> <Value>
 print(valueBase.Value) --> 3.14
 print(valueBase:IsA("NumberValue")) --> true
 ```
+
+# Limitations
+- `FolderToTable` does not encode instance properties, except for `ValueBase` values
+- `FolderToTable` will convert keys to a number if possible. This allows the encoding of arrays, but may cause issues in edge cases where numeric keys should be represented as strings
+- Since Lua has no formal integers, all numbers encoded by `TableToFolder` will be represented by a `NumberValue` instead of an `IntValue`, even if the number is a whole number
 
 # Installation
 - [Get the model on Roblox](https://create.roblox.com/store/asset/109319834775526)
