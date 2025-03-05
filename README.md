@@ -3,7 +3,7 @@ FolderEncoder is a robust and lightweight way to represent Roblox Folder instanc
 
 
 ## `FolderToTable()`
-Encode a Folder or ValueBase into a table. Encodes all descendants of `dataFile` as long as they are Folders or ValueBases. Attributes are prefixed with `attr/`.
+Encode a Folder or ValueBase into a table. Encodes all descendants of `dataFile` as long as they are Folders or ValueBases. Attributes are prefixed with `__attr/`.
 ### Parameters
 |     |     |     |
 | :-- | :-- | :-- |
@@ -26,13 +26,13 @@ print(tbl)
 			BrickColorValue = {
 				CFrameValue = CFrame.new(),
 				__value = BrickColor.new("Medium stone grey"),
-				attr/ColorName = "Grey",
+				__attr/ColorName = "Grey",
 			},
 			ObjectValue = <Instance>,
 		},
 		IntValue = 100,
 		StringValue = "Hello World!",
-		attr_Attribute = Vector3.new(1, 2, 3),
+		__attr/Attribute = Vector3.new(1, 2, 3),
 	}
 ]]
 ```
@@ -60,7 +60,7 @@ local folder = FolderEncoder.TableToFolder(tbl, "CopyOfDataFile", workspace)
 | :-- | :-- | :-- |
 | **var** | *any* | Variable to get ValueBase of |
 
-## Code Samples
+### Code Samples
 ```lua
 local valueBase = FolderEncoder.GetValueBase(3.14)
 print(valueBase) --> <Value>
@@ -68,3 +68,6 @@ print(valueBase.Value) --> 3.14
 print(valueBase:IsA("NumberValue")) --> true
 ```
 
+# Installation
+- [Get the model on Roblox](https://create.roblox.com/store/asset/109319834775526)
+- or [Download from the latest release](https://github.com/MayorGnarwhal/FolderEncoder/releases)
